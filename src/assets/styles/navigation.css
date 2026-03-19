@@ -1,0 +1,162 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 16px 0;
+  backdrop-filter: blur(18px);
+  background: rgba(12, 12, 12, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.nav-shell {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.32);
+}
+
+.brand-copy {
+  display: grid;
+  min-width: 0;
+}
+
+.brand-copy strong {
+  font-family: 'Lexend', system-ui, sans-serif;
+  font-size: 1.08rem;
+}
+
+.brand-copy small {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.menu-button {
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.site-nav {
+  display: none;
+  grid-column: 1 / -1;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(17, 17, 17, 0.96);
+}
+
+.site-nav.is-open {
+  display: grid;
+}
+
+.nav-links,
+.footer-links {
+  display: grid;
+  gap: 10px;
+}
+
+.nav-link,
+.footer-link {
+  color: var(--muted-strong);
+}
+
+.nav-link {
+  padding: 10px 0;
+}
+
+.nav-link:hover,
+.footer-link:hover {
+  color: var(--accent);
+}
+
+.nav-cta {
+  width: 100%;
+}
+
+.site-footer {
+  padding: 24px 0 48px;
+  border-top: 1px solid var(--line);
+}
+
+.footer-shell {
+  display: grid;
+  gap: 28px;
+}
+
+.footer-brand {
+  margin-bottom: 16px;
+}
+
+.footer-copy {
+  max-width: 48ch;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+@media (min-width: 920px) {
+  .nav-shell {
+    grid-template-columns: auto 1fr;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .site-nav,
+  .site-nav.is-open {
+    display: flex;
+    grid-column: auto;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .nav-cta {
+    width: auto;
+    margin-left: 18px;
+  }
+
+  .footer-shell,
+  .footer-meta {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: start;
+  }
+}
