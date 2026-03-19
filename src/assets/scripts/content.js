@@ -1,4 +1,4 @@
-export const downloadUrl = 'https://play.google.com/store/apps/details?id=com.youngsolver.bicount';
+export const downloadUrl = 'https://drive.google.com/file/d/1ZIBSN5Nh1L2XmaNgIx99dCiBIfi1BbPZ/view?usp=sharing';
 
 export const navigation = [
   { href: '#features', label: 'Fonctionnalités' },
