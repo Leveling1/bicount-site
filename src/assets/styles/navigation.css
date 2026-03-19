@@ -46,6 +46,10 @@
 }
 
 .menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   width: 52px;
   height: 52px;
   border: 1px solid var(--line);
@@ -53,6 +57,31 @@
   background: rgba(255, 255, 255, 0.03);
   color: var(--text);
   cursor: pointer;
+}
+.menu-icon {
+  display: grid;
+  gap: 5px;
+}
+
+.menu-icon span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.menu-button.is-active .menu-icon span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-button.is-active .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.is-active .menu-icon span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .site-nav {

@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bicount | Finances partagees, enfin claires</title>
-    <meta name="description" content="Bicount aide a suivre ses depenses, ses remboursements, ses graphs et ses rappels dans une experience mobile-first sombre et lisible.">
+    <title>Bicount | Finances partagées, enfin claires</title>
+    <meta name="description" content="Bicount aide à suivre ses dépenses, ses remboursements, ses graphs et ses rappels dans une expérience mobile-first sombre et lisible.">
     <meta name="theme-color" content="#1A1A1A">
-    <meta property="og:title" content="Bicount | Finances partagees, enfin claires">
-    <meta property="og:description" content="Landing page mobile-first pour presenter les flux personnels et partages de Bicount.">
+    <meta property="og:title" content="Bicount | Finances partagées, enfin claires">
+    <meta property="og:description" content="Landing page mobile-first pour présenter les flux personnels et partagés de Bicount.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bicount.levelingcoder.com/">
     <meta property="og:image" content="https://bicount.levelingcoder.com/assets/images/logo-icon.png">
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/styles/navigation.css">
     <link rel="stylesheet" href="assets/styles/cards.css">
     <link rel="stylesheet" href="assets/styles/visuals.css">
+    <link rel="stylesheet" href="assets/styles/conversion.css">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Aller au contenu</a>
@@ -28,10 +29,13 @@
           <img class="brand-mark" src="assets/images/logo-icon.png" alt="Logo Bicount">
           <span class="brand-copy"><strong>Bicount</strong><small>Shared money, clear view</small></span>
         </a>
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>Menu</button>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu" data-menu-button>
+          <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="sr-only">Menu</span>
+        </button>
         <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
           <div class="nav-links" data-nav-links></div>
-          <a class="button-secondary nav-cta" href="#cta">Explorer l app</a>
+          <a class="button-secondary nav-cta download-button" href="#" data-download-link><span class="button-icon" aria-hidden="true">↓</span><span>Télécharger</span></a>
         </nav>
       </div>
     </header>
@@ -39,18 +43,18 @@
       <section class="hero section" id="top">
         <div class="container hero-shell">
           <div class="hero-copy" data-reveal>
-            <span class="section-label">Finance partagee, pensee mobile</span>
-            <h1 class="hero-title">Partage tes depenses, suis les remboursements et garde enfin une vue nette sur ton argent.</h1>
-            <p class="section-copy">Bicount rassemble transactions, rappels d abonnements, funding et graphs utiles dans une interface sombre, lisible et rapide.</p>
+            <span class="section-label">Télécharge l'app qui calme enfin tes comptes</span>
+            <h1 class="hero-title">Moins de flou, moins de rappels gênants, plus de clarté dans ton argent au quotidien.</h1>
+            <p class="section-copy">Bicount t'aide à savoir qui a payé, qui doit quoi, ce qui sort ce mois-ci et ce qu'il te reste, pour que gérer ton budget redevienne simple.</p>
             <div class="hero-actions">
-              <a class="button" href="#features">Decouvrir les fonctionnalites</a>
-              <a class="button-secondary" href="#workflow">Voir le parcours</a>
+              <a class="button download-button" href="#" data-download-link><span class="button-icon" aria-hidden="true">↓</span><span>Télécharger l'app</span></a>
+              <a class="button-secondary" href="#features">Voir ce que ça change</a>
             </div>
-            <p class="hero-note">Android et iOS, logique offline first, temps reel quand il apporte une vraie valeur.</p>
+            <p class="hero-note">L'objectif n'est pas juste de suivre des chiffres. C'est de t'aider à vivre l'argent avec plus de calme, de régularité et de contrôle.</p>
             <ul class="chip-list">
-              <li class="chip">Transactions groupees</li>
-              <li class="chip">QR et lien d invite</li>
-              <li class="chip">Graphs 7, 30, 90 jours ou tout</li>
+              <li class="chip">Moins de charge mentale</li>
+              <li class="chip">Moins de tensions à plusieurs</li>
+              <li class="chip">Plus de visibilité chaque semaine</li>
             </ul>
           </div>
           <div class="hero-visual" data-reveal>
@@ -62,28 +66,28 @@
               <p class="card-copy">Notifications locales et vue mensuelle de tes charges fixes.</p>
             </article>
             <article class="stat-card stat-card-side">
-              <span class="card-kicker">Split instantane</span>
+              <span class="card-kicker">Split instantané</span>
               <h2 class="card-title">3 modes</h2>
-              <p class="card-copy">Egal, pourcentage ou montant manuel selon le contexte.</p>
+              <p class="card-copy">Égal, pourcentage ou montant manuel, selon le contexte.</p>
             </article>
             <div class="device">
               <div class="device-notch"></div>
               <div class="device-screen">
                 <div class="device-header">
                   <img class="device-logo" src="assets/images/logo-icon.png" alt="" aria-hidden="true">
-                  <div><span>Solde partage</span><strong>2 845 EUR</strong></div>
+                  <div><span>Solde partagé</span><strong>2 845 EUR</strong></div>
                 </div>
                 <div class="chart-track" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
                 <div class="device-section">
                   <small>Cette semaine</small>
                   <div class="row"><span>Courses colocation</span><strong>- 42 EUR</strong></div>
                   <div class="row"><span>Remboursement Lina</span><strong class="positive">+ 28 EUR</strong></div>
-                  <div class="row"><span>Abonnement video</span><strong>- 12 EUR</strong></div>
+                  <div class="row"><span>Abonnement vidéo</span><strong>- 12 EUR</strong></div>
                 </div>
                 <div class="device-section">
                   <small>Vision rapide</small>
                   <div class="row"><span>Net flow</span><strong class="positive">+ 260 EUR</strong></div>
-                  <div class="row"><span>Charges a venir</span><strong>- 86 EUR</strong></div>
+                  <div class="row"><span>Charges à venir</span><strong>- 86 EUR</strong></div>
                 </div>
               </div>
             </div>
@@ -94,10 +98,10 @@
       <section class="section" id="features">
         <div class="container story-layout">
           <div class="split-copy" data-reveal>
-            <span class="section-label">Un cockpit lisible</span>
-            <h2 class="section-title">Tout ce qui compte, sans effet usine a gaz.</h2>
-            <p class="section-copy">La landing reprend la tension visuelle de la reference, mais la recentre sur la promesse Bicount: rendre les finances personnelles et partagees faciles a lire sur mobile.</p>
-            <a class="ghost-link" href="#security">Voir les points forts</a>
+            <span class="section-label">Ce que Bicount change vraiment</span>
+            <h2 class="section-title">Tu passes moins de temps à vérifier, relancer et recalculer.</h2>
+            <p class="section-copy">Chaque écran sert le même but : te rendre plus serein, plus clair et plus constant dans la façon dont tu gères ton argent seul ou à plusieurs.</p>
+            <a class="ghost-link" href="#cta">Télécharger maintenant</a>
           </div>
           <div class="card-grid" data-feature-grid></div>
         </div>
@@ -105,26 +109,26 @@
       <section class="section" id="workflow">
         <div class="container workflow-layout">
           <div class="split-copy" data-reveal>
-            <span class="section-label">Parcours produit</span>
-            <h2 class="section-title">Trois mouvements pour rester aligne avec la realite du budget.</h2>
-            <p class="section-copy">La page raconte un flux simple: capter, repartir, comprendre. C est ce qui donne du sens a la home, aux graphs et aux notifications.</p>
+            <span class="section-label">Une app qu'on garde ouverte dans sa routine</span>
+            <h2 class="section-title">Le bon réflexe quand tu veux comprendre, décider et avancer.</h2>
+            <p class="section-copy">Bicount ne cherche pas à impressionner. Elle cherche à t'aider vite, souvent, et assez bien pour que tu reviennes naturellement dans l'app.</p>
           </div>
           <div class="card-grid" data-steps-grid></div>
         </div>
       </section>
       <section class="section" id="security">
         <div class="container showcase-layout">
-          <div class="ring-panel" data-reveal">
+          <div class="ring-panel" data-reveal>
             <div class="glow glow-three"></div>
             <div class="ring" aria-hidden="true"></div>
             <article class="ring-stat pill-one"><div><small>Solde net</small><strong>+ 500 EUR</strong></div></article>
-            <article class="ring-stat pill-two"><div><small>Invites actives</small><strong>25</strong></div></article>
-            <article class="ring-stat pill-three"><div><small>Rappels prets</small><strong>100%</strong></div></article>
+            <article class="ring-stat pill-two"><div><small>Invitations actives</small><strong>25</strong></div></article>
+            <article class="ring-stat pill-three"><div><small>Rappels prêts</small><strong>100%</strong></div></article>
           </div>
           <div class="split-copy" data-reveal>
-            <span class="section-label">Confiance et clarte</span>
-            <h2 class="section-title">Une interface qui rassure sans devenir froide.</h2>
-            <p class="section-copy">Le theme sombre, les contrastes du vert Bicount et les cartes nettes gardent une sensation premium tout en restant tres lisibles sur telephone.</p>
+            <span class="section-label">Une sensation de contrôle qui reste</span>
+            <h2 class="section-title">Tu reprends la main sur ton mois sans te battre avec ton budget.</h2>
+            <p class="section-copy">Le thème sombre, les contrastes du vert Bicount et les cartes nettes gardent une sensation premium, tout en donnant envie de revenir souvent dans l'app.</p>
             <div class="card-grid" data-value-grid></div>
           </div>
         </div>
@@ -132,9 +136,9 @@
       <section class="section" id="faq">
         <div class="container reviews-layout">
           <div class="split-copy" data-reveal>
-            <span class="section-label">Retour utilisateur</span>
-            <h2 class="section-title">Une landing qui parle comme le produit: concret, calme et utile.</h2>
-            <p class="section-copy">Les cartes, avis et FAQ servent ici a rassurer, a clarifier le scope visible V1 et a montrer une vraie direction de marque.</p>
+            <span class="section-label">Pourquoi les gens restent dessus</span>
+            <h2 class="section-title">Parce que l'app fait gagner de l'espace mental dès les premières utilisations.</h2>
+            <p class="section-copy">La meilleure conversion n'arrive pas quand on promet plus. Elle arrive quand on montre clairement le soulagement que l'app apporte dans la vraie vie.</p>
           </div>
           <div class="card-grid" data-testimonials-grid></div>
         </div>
@@ -143,12 +147,12 @@
       <section class="section" id="cta">
         <div class="container">
           <div class="cta-shell" data-reveal>
-            <span class="section-label">Pret pour le deploy</span>
-            <h2 class="section-title">Une base propre, responsive et raccord avec l univers Bicount.</h2>
-            <p class="section-copy">Le projet reste leger a maintenir: pas de dependance front lourde, des fichiers courts, un build simple et une pipeline FTP deja branchee pour `bicount.levelingcoder.com`.</p>
+            <span class="section-label">Prêt à te simplifier la vie</span>
+            <h2 class="section-title">Télécharge Bicount et transforme tes comptes en habitude claire, simple et régulière.</h2>
+            <p class="section-copy">Si tu veux moins d'oublis, moins de tensions et plus de visibilité sur ton argent, l'étape utile n'est pas de relire la landing. C'est de télécharger l'app.</p>
             <div class="hero-actions">
-              <a class="button" href="#top">Revenir en haut</a>
-              <a class="button-secondary" href="#features">Relire la page</a>
+              <a class="button download-button" href="#" data-download-link><span class="button-icon" aria-hidden="true">↓</span><span>Télécharger Bicount</span></a>
+              <a class="button-secondary" href="#features">Voir les bénéfices</a>
             </div>
           </div>
         </div>
@@ -161,15 +165,19 @@
             <img class="brand-mark" src="assets/images/logo-icon.png" alt="Logo Bicount">
             <span class="brand-copy"><strong>Bicount</strong><small>Landing page mobile-first</small></span>
           </a>
-          <p class="footer-copy">Une vitrine statique pour presenter clairement les flux personnels et partages de l application.</p>
+          <p class="footer-copy">Une app pensée pour réduire la charge mentale, clarifier les dépenses partagées et donner envie de revenir régulièrement.</p>
         </div>
         <div class="footer-links" data-footer-links></div>
       </div>
       <div class="container footer-meta">
-        <span>Copyright <span data-year></span> Bicount. Tous droits reserves.</span>
+        <span>Copyright <span data-year></span> Bicount. Tous droits réservés.</span>
         <a href="https://bicount.levelingcoder.com/">bicount.levelingcoder.com</a>
       </div>
     </footer>
+    <aside class="mobile-download-bar" data-reveal>
+      <p>Prêt à reprendre le contrôle sur tes comptes partagés ?</p>
+      <a class="button download-button" href="#" data-download-link><span class="button-icon" aria-hidden="true">↓</span><span>Télécharger l'app</span></a>
+    </aside>
     <script type="module" src="assets/scripts/app.js"></script>
   </body>
 </html>

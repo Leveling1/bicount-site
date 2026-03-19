@@ -1,43 +1,45 @@
+export const downloadUrl = 'https://play.google.com/store/apps/details?id=com.youngsolver.bicount';
+
 export const navigation = [
-  { href: '#features', label: 'Fonctionnalites' },
+  { href: '#features', label: 'Fonctionnalités' },
   { href: '#workflow', label: 'Parcours' },
   { href: '#security', label: 'Confiance' },
   { href: '#faq', label: 'FAQ' }
 ];
 
 export const proofCards = [
-  { value: 'Split flexible', title: 'Transactions partagees', text: 'Repartis une depense a parts egales, en pourcentage ou par montant sans perdre le contexte.' },
-  { value: 'Invite smart', title: 'QR et lien profond', text: 'Fais entrer un ami dans le flux en un scan, un lien, puis suis la relation en temps reel.' },
-  { value: 'Graphs utiles', title: 'Lecture immediate', text: 'Passe de 7 a 90 jours ou a la vue complete pour comprendre la tendance sans fouiller.' }
+  { value: 'Moins de charge mentale', title: 'Tu sais enfin qui a payé quoi.', text: 'Plus besoin de notes perdues, de captures d écran ou de calculs refaits le soir.' },
+  { value: 'Moins de tensions', title: 'Les remboursements deviennent simples.', text: 'Tout le monde voit la même réalité, au bon moment, sans relance gênante.' },
+  { value: 'Plus de contrôle', title: 'Ton mois devient lisible.', text: 'Dépenses, abonnements et tendances ressortent vite pour t aider à décider calmement.' }
 ];
 
 export const featureCards = [
-  { tag: 'Transactions', title: 'Chaque depense garde son histoire', text: 'Bicount met en avant les transactions groupees, les beneficiaires et les remboursements sans surcharger l ecran.' },
-  { tag: 'Analytics', title: 'Des graphs qui servent vraiment', text: 'Net flow, cashflow trend, abonnements et breakdown des depenses restent visibles dans un langage simple.' },
-  { tag: 'Reminders', title: 'Les abonnements ne te surprennent plus', text: 'Les rappels locaux et les points de controle mensuels t aident a rester en avance sur les sorties recurrentes.' }
+  { tag: 'Vision claire', title: 'Tu vois où part ton argent en quelques secondes', text: 'Bicount regroupe dépenses, remboursements et tendances dans une interface qui va droit au but.' },
+  { tag: 'Vie à plusieurs', title: 'Tu évites les discussions floues', text: 'Les transactions groupées, les bénéficiaires et les soldes partagés rendent les comptes plus fluides au quotidien.' },
+  { tag: 'Routine utile', title: 'Tu gardes de bonnes habitudes sans effort', text: 'Les rappels et les points de contrôle t aident à revenir dans l app naturellement, au bon moment.' }
 ];
 
 export const steps = [
-  { index: '01', title: 'Ajoute une transaction', text: 'Capture une entree, une sortie ou un funding avec la bonne date et le bon montant.' },
-  { index: '02', title: 'Choisis la repartition', text: 'Passe en egal, pourcentage ou montant manuel selon la dynamique du groupe.' },
-  { index: '03', title: 'Lis l impact immediat', text: 'Le dashboard, les cartes et les graphs recollent automatiquement au vrai etat du budget.' }
+  { index: '01', title: 'Télécharge et ouvre Bicount', text: 'Tu prends en main ton budget partagé depuis ton téléphone, sans te perdre dans une usine à gaz.' },
+  { index: '02', title: 'Ajoute tes dépenses et tes répartitions', text: 'En quelques gestes, chacun sait ce qu il a payé, ce qu il doit et ce qu il lui reste.' },
+  { index: '03', title: 'Reviens chaque semaine avec plaisir', text: 'Les graphs, les rappels et la clarté de l interface donnent envie d utiliser l app régulièrement.' }
 ];
 
 export const valueCards = [
-  { title: 'Offline first', text: 'La landing met en avant la philosophie locale d abord du produit au lieu de promettre du temps reel partout.' },
-  { title: 'Temps reel quand utile', text: 'Invites, sync et mises a jour restent presentes comme un bonus, pas comme une dependance fragile.' },
-  { title: 'Confidentialite discrete', text: 'L interface assume un ton sobre, lisible et rassurant pour parler argent sans bruit visuel.' }
+  { title: 'Tu anticipes au lieu de subir', text: 'Les sorties à venir et les abonnements reviennent dans ton champ de vision avant de te surprendre.' },
+  { title: 'Tu gardes de meilleures relations', text: 'Quand les comptes sont clairs, les échanges restent simples, même dans une coloc ou un couple.' },
+  { title: 'Tu restes constant', text: 'La sobriété de l interface aide à transformer un suivi occasionnel en vraie habitude utile.' }
 ];
 
 export const testimonials = [
-  { name: 'Lina Mercier', role: 'Freelance', quote: 'J ai enfin une vue nette sur mes depenses perso et partagees sans faire des calculs partout.' },
-  { name: 'Maxime Renaud', role: 'Colocation', quote: 'Le split par montant et les rappels rendent les comptes de maison beaucoup moins fatigants.' },
-  { name: 'Sofia Karim', role: 'Couple', quote: 'Les graphs nous aident a comprendre le mois au lieu de juste regarder une liste de lignes.' }
+  { name: 'Lina Mercier', role: 'Freelance', quote: 'Bicount m évite de repousser mes comptes. J ouvre l app, je comprends, je referme.' },
+  { name: 'Maxime Renaud', role: 'Colocation', quote: 'Depuis qu on l utilise, on parle moins d argent en urgence et plus sereinement.' },
+  { name: 'Sofia Karim', role: 'Couple', quote: 'Le vrai gain, ce n est pas juste le suivi. C est la tranquillité que ça apporte chaque semaine.' }
 ];
 
 export const faqItems = [
-  { question: 'Bicount est pense pour quel usage ?', answer: 'Pour suivre ses flux perso, partager des depenses avec des amis et garder une lecture claire du budget sur mobile.' },
-  { question: 'Est-ce que les depenses partagees sont flexibles ?', answer: 'Oui. La V1 met deja en avant les modes egal, pourcentage et montant manuel pour les transactions groupees.' },
-  { question: 'Le produit depend-il du temps reel en permanence ?', answer: 'Non. Bicount est pense offline first, puis enrichi par le temps reel quand la plateforme le permet.' },
-  { question: 'Que montre cette landing ?', answer: 'Une vitrine claire des ecrans Home, Graphs, Transaction et Profile, avec un design adapte au mobile et au deploy web.' }
+  { question: 'Pourquoi Bicount peut devenir une habitude ?', answer: 'Parce que l app donne vite une réponse utile : qui a payé, qui doit quoi, et ce qui arrive ensuite.' },
+  { question: 'Est-ce pratique pour les dépenses partagées ?', answer: 'Oui. La répartition égale, en pourcentage ou en montant manuel enlève beaucoup de friction au quotidien.' },
+  { question: 'Qu est-ce que ça change concrètement ?', answer: 'Moins de charge mentale, moins d oublis, moins de tensions et une vue plus calme sur l argent.' },
+  { question: 'À qui s adresse Bicount ?', answer: 'À toute personne qui veut mieux suivre son budget perso ou partagé depuis son téléphone, sans complexité inutile.' }
 ];

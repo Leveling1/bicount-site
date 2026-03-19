@@ -1,4 +1,5 @@
 import {
+  downloadUrl,
   faqItems,
   featureCards,
   navigation,
@@ -72,6 +73,12 @@ renderInto('[data-faq-grid]', faqItems, ({ question, answer }) => `
   </details>
 `);
 
+document.querySelectorAll('[data-download-link]').forEach((node) => {
+  node.setAttribute('href', downloadUrl);
+  node.setAttribute('target', '_blank');
+  node.setAttribute('rel', 'noreferrer');
+});
+
 document.querySelectorAll('[data-year]').forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
@@ -81,11 +88,15 @@ const nav = document.getElementById('site-nav');
 const closeMenu = () => {
   nav?.classList.remove('is-open');
   menuButton?.setAttribute('aria-expanded', 'false');
+  menuButton?.setAttribute('aria-label', 'Ouvrir le menu');
+  menuButton?.classList.remove('is-active');
 };
 
 menuButton?.addEventListener('click', () => {
   const isOpen = nav?.classList.toggle('is-open');
   menuButton.setAttribute('aria-expanded', String(Boolean(isOpen)));
+  menuButton.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+  menuButton.classList.toggle('is-active', Boolean(isOpen));
 });
 
 nav?.addEventListener('click', (event) => {
