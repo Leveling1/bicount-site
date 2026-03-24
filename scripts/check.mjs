@@ -10,12 +10,17 @@ const requiredPaths = [
   'src/index.html',
   'src/robots.txt',
   'src/sitemap.xml',
+  'src/.well-known/assetlinks.json',
+  'src/.well-known/apple-app-site-association',
+  'src/friend/invite/index.html',
   'src/assets/images/logo-icon.png',
+  'src/assets/styles/invite.css',
   'src/assets/styles/base.css',
   'src/assets/styles/navigation.css',
   'src/assets/styles/cards.css',
   'src/assets/styles/visuals.css',
   'src/assets/scripts/content.js',
+  'src/assets/scripts/invite.js',
   'src/assets/scripts/app.js',
   '.github/workflows/ci-cd.yml'
 ];

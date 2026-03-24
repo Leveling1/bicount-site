@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.youngsolver.bicount",
+      "sha256_cert_fingerprints": [
+        "CE:C4:26:D1:E3:78:1C:18:5C:B8:51:04:E3:84:53:7B:5A:50:0F:D2:BE:A1:6C:22:49:09:B0:E4:E7:AE:7D:5A"
+      ]
+    }
+  }
+]

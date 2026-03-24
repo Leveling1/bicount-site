@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Bicount</title>
+    <meta name="description" content="Ouvre cette invitation dans Bicount pour rejoindre un partage de dépenses, puis télécharge l'application si besoin.">
+    <meta name="theme-color" content="#1A1A1A">
+    <link rel="icon" href="../../assets/images/logo-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/styles/base.css">
+    <link rel="stylesheet" href="../../assets/styles/cards.css">
+    <link rel="stylesheet" href="../../assets/styles/conversion.css">
+    <link rel="stylesheet" href="../../assets/styles/invite.css">
+  </head>
+  <body class="invite-body">
+    <main class="invite-shell">
+      <section class="surface-card invite-card">
+        <span class="section-label">Invitation Bicount</span>
+        <h1 class="section-title">Quelqu'un t'a invité à rejoindre Bicount.</h1>
+        <p class="section-copy">Ouvre l'app pour accepter l'invitation et retrouver directement tes comptes partagés, tes remboursements et tes rappels.</p>
+        <div class="invite-code">
+          <span>Code d'invitation</span>
+          <strong data-invite-code>Chargement...</strong>
+        </div>
+        <div class="hero-actions">
+          <a class="button download-button" href="#" data-download-link><span class="button-icon" aria-hidden="true">↓</span><span>Télécharger l'app</span></a>
+          <button class="button-secondary" type="button" data-copy-code>Copier le code</button>
+        </div>
+        <p class="invite-note">Après installation, rouvre ce lien depuis ton téléphone pour que Bicount ouvre automatiquement l'invitation.</p>
+      </section>
+    </main>
+    <script type="module" src="../../assets/scripts/invite.js"></script>
+  </body>
+</html>

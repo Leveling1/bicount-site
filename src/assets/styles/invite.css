@@ -1,0 +1,55 @@
+.invite-body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.invite-shell {
+  width: min(720px, 100%);
+}
+
+.invite-card {
+  display: grid;
+  gap: 18px;
+}
+
+.invite-card .hero-actions {
+  margin-top: 8px;
+}
+
+.invite-code {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.invite-code span {
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.invite-code strong {
+  font-family: 'Lexend', system-ui, sans-serif;
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  word-break: break-word;
+}
+
+.invite-note {
+  color: var(--muted-strong);
+}
+
+@media (min-width: 760px) {
+  .invite-body {
+    padding: 40px;
+  }
+
+  .invite-card {
+    padding: 36px;
+  }
+}
