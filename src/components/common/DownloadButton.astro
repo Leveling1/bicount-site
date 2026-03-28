@@ -1,0 +1,34 @@
+---
+import SvgIcon from '@/components/common/SvgIcon.astro';
+import { downloadUrl } from '@/config/site';
+
+interface Props {
+  label: string;
+  ariaLabel: string;
+  variant?: 'dark' | 'lime' | 'outline' | 'outline-w';
+  className?: string;
+  id?: string;
+  showIcon?: boolean;
+}
+
+const {
+  label,
+  ariaLabel,
+  variant = 'dark',
+  className = '',
+  id,
+  showIcon = false
+} = Astro.props;
+---
+
+<a
+  id={id}
+  href={downloadUrl}
+  class:list={['btn', `btn-${variant}`, className]}
+  aria-label={ariaLabel}
+  target="_blank"
+  rel="noreferrer"
+>
+  {showIcon && <SvgIcon name="download" size={15} />}
+  {label}
+</a>

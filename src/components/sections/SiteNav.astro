@@ -1,0 +1,24 @@
+---
+import DownloadButton from '@/components/common/DownloadButton.astro';
+import SvgIcon from '@/components/common/SvgIcon.astro';
+import { navLinks } from '@/config/site';
+---
+
+<nav class="nav" id="nav" aria-label="Navigation">
+  <div class="wrap">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo" aria-label="Bicount accueil">
+        <div class="logo-mark" aria-hidden="true">
+          <SvgIcon name="logo" size={18} stroke="#BCD367" />
+        </div>
+        <span class="logo-text">Bicount</span>
+      </a>
+      <div class="nav__links" aria-label="Liens de navigation">
+        {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+      </div>
+      <div class="nav__right">
+        <DownloadButton label="Télécharger" ariaLabel="Télécharger Bicount" />
+      </div>
+    </div>
+  </div>
+</nav>

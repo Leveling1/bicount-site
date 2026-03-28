@@ -1,0 +1,65 @@
+---
+import SvgIcon from '@/components/common/SvgIcon.astro';
+import { proHighlights } from '@/config/site';
+---
+
+<section class="sec" id="pro" aria-labelledby="pro-heading">
+  <div class="wrap">
+    <div class="split">
+      <div class="split__text">
+        <div class="rv">
+          <span class="pro-badge">
+            <SvgIcon name="check" size={10} stroke="#69773A" />
+            Bicount Pro
+          </span>
+        </div>
+        <h2 class="rv d1" id="pro-heading">
+          Avec Bicount Pro, ton activité arrête de se mélanger à ta vie perso
+        </h2>
+        <p class="lead rv d2">
+          Pour les micro-entrepreneurs, petits commerces et freelances, Bicount
+          Pro ajoute une couche simple pour suivre les sorties d'argent
+          d'activité, séparer caisse et perso, et commencer à structurer une
+          trésorerie crédible.
+        </p>
+        <ul class="pro-list rv d3" aria-label="Fonctionnalités Bicount Pro">
+          {proHighlights.map((item) => (
+            <li class="pro-list__item">
+              <div class="check-icon" aria-hidden="true">
+                <SvgIcon name="check" size={10} stroke="#69773A" />
+              </div>
+              <p class="body">{item}</p>
+            </li>
+          ))}
+        </ul>
+        <p class="body rv d4">
+          La même app t'accompagne comme particulier, puis comme activité, sans
+          transformer ton téléphone en logiciel de gestion compliqué.
+        </p>
+      </div>
+      <div class="split__visual rv d2" aria-hidden="true">
+        <div class="pro-visual-card">
+          <div class="pvc-tag">
+            <SvgIcon name="check" size={10} stroke="#BCD367" />
+            Mode Pro actif
+          </div>
+          <div class="pvc-title">Trésorerie activité</div>
+          <div class="pvc-amount">284 000 FC</div>
+          <div class="pvc-sub">Semaine en cours</div>
+          <div class="pvc-row">
+            <div class="pvc-box">
+              <div class="pvc-box__l">Perso</div>
+              <div class="pvc-box__v white">63 500 FC</div>
+            </div>
+            <div class="pvc-box">
+              <div class="pvc-box__l">Activité</div>
+              <div class="pvc-box__v lime">284 000 FC</div>
+            </div>
+          </div>
+          <div class="pvc-prog-label">Part activité sur total</div>
+          <div class="pvc-prog"><div class="pvc-prog-fill"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+.invite-page {
+  padding-top: 160px;
+  min-height: calc(100vh - 180px);
+}
+
+.invite-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 36px 30px;
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: 0 30px 70px rgba(19,35,24,.08);
+}
+
+.invite-shell h1 { max-width: 12ch; margin: 18px 0 16px; }
+.invite-copy { max-width: 48ch; }
+.invite-code {
+  margin: 28px 0 24px;
+  padding: 18px 22px;
+  background: var(--surface-s);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+}
+
+.invite-code span { display: block; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--olive); margin-bottom: 6px; }
+.invite-code strong { font-size: clamp(1.6rem, 5vw, 2.5rem); letter-spacing: -.04em; }
+.invite-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 22px; }
+.invite-note { max-width: 48ch; }
+
+@media (max-width: 720px) {
+  .invite-page { padding-top: 128px; }
+  .invite-shell { padding: 28px 22px; }
+  .invite-actions { flex-direction: column; }
+  .invite-actions .btn { justify-content: center; }
+}

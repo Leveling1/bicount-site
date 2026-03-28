@@ -1,0 +1,27 @@
+---
+import SectionHeader from '@/components/common/SectionHeader.astro';
+import { principles } from '@/config/site';
+---
+
+<section class="sec" id="principes" aria-labelledby="principles-heading">
+  <div class="wrap">
+    <SectionHeader
+      id="principles-heading"
+      eyebrow="Ce qui guide le produit"
+      title="Une app construite sur des principes simples"
+      lead="Bicount n'essaie pas de tout faire dès le premier jour. L'app se concentre sur la discipline financière quotidienne, et grandit progressivement avec tes besoins."
+      maxWidth="54ch"
+    />
+    <div class="pills-row rv" role="list" aria-label="Principes Bicount">
+      {principles.map((item) => <div class="pill-badge" role="listitem">{item.name}</div>)}
+    </div>
+    <div class="principles-list">
+      {principles.map((item, index) => (
+        <article class:list={['p-item rv', `d${(index % 3) + 1}`]}>
+          <div class="p-item__name">{item.name}</div>
+          <p class="body">{item.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

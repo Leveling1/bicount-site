@@ -1,0 +1,24 @@
+---
+import SectionHeader from '@/components/common/SectionHeader.astro';
+import { timelineSteps } from '@/config/site';
+---
+
+<section class="sec sec-alt" aria-labelledby="evolution-heading">
+  <div class="wrap">
+    <SectionHeader
+      id="evolution-heading"
+      eyebrow="Trajectoire"
+      title="Bicount évolue en même temps que ta vie financière"
+    />
+    <ol class="timeline-wrap" aria-label="Étapes d'évolution Bicount">
+      {timelineSteps.map((step, index) => (
+        <li class:list={['tl-step rv', `d${index + 1}`]}>
+          <div class="tl-dot" aria-hidden="true">{index + 1}</div>
+          <div class="tl-period">{step.period}</div>
+          <h3>{step.title}</h3>
+          <p class="body" style="margin-top:8px;">{step.body}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

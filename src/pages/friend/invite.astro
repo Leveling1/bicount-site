@@ -1,0 +1,14 @@
+---
+import InviteLanding from '@/components/react/InviteLanding';
+import SiteFooter from '@/components/sections/SiteFooter.astro';
+import SiteNav from '@/components/sections/SiteNav.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Invitation Bicount" description="Ouvre cette invitation dans Bicount pour rejoindre un partage de dépenses, puis télécharge l'application si besoin.">
+  <SiteNav />
+  <main>
+    <InviteLanding client:load />
+  </main>
+  <SiteFooter />
+</BaseLayout>

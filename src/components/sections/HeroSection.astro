@@ -1,0 +1,112 @@
+---
+import DownloadButton from '@/components/common/DownloadButton.astro';
+import SvgIcon from '@/components/common/SvgIcon.astro';
+import { heroBenefits } from '@/config/site';
+---
+
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="wrap">
+    <div class="hero__inner">
+      <div class="hero__eyebrow rv" aria-label="Bientôt disponible · Kinshasa, RDC">
+        <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+        Bientôt disponible · Kinshasa, RDC
+      </div>
+      <h1 class="rv d1" id="hero-h1">
+        Ton cockpit pour savoir<br />
+        <em>où part ton argent</em>
+      </h1>
+      <p class="lead rv d2">
+        Application mobile simple et locale pour suivre tes dépenses en cash,
+        mobile money et banque, séparer perso et activité, et décider plus
+        sereinement chaque jour.
+      </p>
+      <div class="hero__ctas rv d3">
+        <DownloadButton
+          id="telecharger"
+          label="Bientôt sur Android"
+          ariaLabel="Télécharger Bicount, bientôt sur Android"
+          showIcon={true}
+        />
+        <a href="#comment-ca-marche" class="btn btn-outline" aria-label="Voir comment ça marche">
+          Voir comment ça marche
+        </a>
+      </div>
+      <div class="hero__benefits rv d4" role="list" aria-label="Points clés">
+        {heroBenefits.map((item) => (
+          <div class="hero__benefit" role="listitem">
+            <div class="hero__benefit-icon" aria-hidden="true">
+              <SvgIcon name={item.icon} size={14} stroke="#69773A" />
+            </div>
+            {item.text}
+          </div>
+        ))}
+      </div>
+      <div class="hero-visual rv d3" aria-hidden="true">
+        <div class="hero-visual__frame">
+          <div class="app-bar">
+            <span class="app-title">Bicount</span>
+            <span class="app-month">Mars 2026</span>
+          </div>
+          <div class="app-grid">
+            <div class="app-grid-item">
+              <div class="app-grid-item__label">Dépenses du mois</div>
+              <div class="app-grid-item__val lime">347 500</div>
+              <div class="app-grid-item__sub">FC · ≈ 120 USD</div>
+              <div class="app-grid-item__badge">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+                  <path d="M1 6 L4 2 L7 6" stroke="#BCD367" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                −8% vs mois dernier
+              </div>
+            </div>
+            <div class="app-grid-item">
+              <div class="app-grid-item__label">Nourriture</div>
+              <div class="app-grid-item__val">142 000</div>
+              <div class="app-grid-item__sub">FC · 41% du total</div>
+            </div>
+            <div class="app-grid-item">
+              <div class="app-grid-item__label">Transport</div>
+              <div class="app-grid-item__val">38 500</div>
+              <div class="app-grid-item__sub">FC · 11% du total</div>
+            </div>
+          </div>
+          <div class="app-chart-row" role="img" aria-label="Graphique dépenses hebdomadaires">
+            <div class="app-bar-item" style="height:42%"></div>
+            <div class="app-bar-item mid" style="height:61%"></div>
+            <div class="app-bar-item" style="height:35%"></div>
+            <div class="app-bar-item mid" style="height:78%"></div>
+            <div class="app-bar-item hi" style="height:100%"></div>
+            <div class="app-bar-item" style="height:52%"></div>
+            <div class="app-bar-item" style="height:29%"></div>
+          </div>
+          <div class="app-txs">
+            <div class="app-tx">
+              <div class="app-tx-icon">🛒</div>
+              <div>
+                <div class="app-tx-info-name">Marché central</div>
+                <div class="app-tx-info-cat">Nourriture · Espèces</div>
+              </div>
+              <span class="app-tx-amount">−12 000 FC</span>
+            </div>
+            <div class="app-tx">
+              <div class="app-tx-icon">📱</div>
+              <div>
+                <div class="app-tx-info-name">Recharge data</div>
+                <div class="app-tx-info-cat">Data · M-Pesa</div>
+              </div>
+              <span class="app-tx-amount">−3 500 FC</span>
+            </div>
+            <div class="app-tx">
+              <div class="app-tx-icon">🚌</div>
+              <div>
+                <div class="app-tx-info-name">Transport</div>
+                <div class="app-tx-info-cat">Déplacement · Espèces</div>
+              </div>
+              <span class="app-tx-amount">−1 000 FC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

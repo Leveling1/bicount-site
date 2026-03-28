@@ -1,0 +1,16 @@
+---
+import { marketStats } from '@/config/site';
+---
+
+<div class="stats-band" id="comment-ca-marche" aria-label="Contexte marché RDC">
+  <div class="wrap">
+    <div class="stats-band__grid" role="list">
+      {marketStats.map((item, index) => (
+        <div class:list={['stat-item rv', index > 0 && `d${index}`]} role="listitem">
+          <div class="stat-item__num">{item.value}</div>
+          <div class="stat-item__label">{item.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

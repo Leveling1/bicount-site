@@ -3,30 +3,43 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const requiredPaths = [
+const scanRoots = ['src', 'public', 'scripts', '.github/workflows'];
+const rootFiles = [
+  '.gitignore',
   'AGENTS.md',
   'README.md',
+  'astro.config.mjs',
   'package.json',
-  'src/index.html',
-  'src/robots.txt',
-  'src/sitemap.xml',
-  'src/.well-known/assetlinks.json',
-  'src/.well-known/apple-app-site-association',
-  'src/friend/invite/index.html',
-  'src/assets/images/logo-icon.png',
-  'src/assets/styles/invite.css',
-  'src/assets/styles/base.css',
-  'src/assets/styles/navigation.css',
-  'src/assets/styles/cards.css',
-  'src/assets/styles/visuals.css',
-  'src/assets/scripts/content.js',
-  'src/assets/scripts/invite.js',
-  'src/assets/scripts/app.js',
-  '.github/workflows/ci-cd.yml'
+  'tsconfig.json'
 ];
-const scanRoots = ['src', 'scripts', '.github/workflows'];
-const rootFiles = ['AGENTS.md', 'README.md', 'package.json', '.gitignore'];
-const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.md', '.yml', '.json', '.txt', '.xml']);
+const requiredPaths = [
+  ...rootFiles,
+  '.github/workflows/ci-cd.yml',
+  'public/.well-known/apple-app-site-association',
+  'public/.well-known/assetlinks.json',
+  'public/images/logo-icon.png',
+  'public/robots.txt',
+  'public/sitemap.xml',
+  'src/components/react/ClientBehaviors.tsx',
+  'src/components/react/InviteLanding.tsx',
+  'src/layouts/BaseLayout.astro',
+  'src/pages/friend/invite.astro',
+  'src/pages/index.astro'
+];
+const textExtensions = new Set([
+  '.astro',
+  '.css',
+  '.html',
+  '.js',
+  '.json',
+  '.md',
+  '.mjs',
+  '.ts',
+  '.tsx',
+  '.txt',
+  '.xml',
+  '.yml'
+]);
 const issues = [];
 
 const resolveFromRoot = (relativePath) => path.join(repoRoot, relativePath);
@@ -40,6 +53,10 @@ const fileExists = async (relativePath) => {
 };
 
 const collectFiles = async (relativeDir) => {
+  if (!(await fileExists(relativeDir))) {
+    return [];
+  }
+
   const entries = await readdir(resolveFromRoot(relativeDir), { withFileTypes: true });
   const nested = await Promise.all(entries.map(async (entry) => {
     const nextPath = path.join(relativeDir, entry.name);
@@ -70,15 +87,14 @@ for (const relativePath of filesToCheck) {
   }
 }
 
-const indexHtml = await readFile(resolveFromRoot('src/index.html'), 'utf8');
-const assetMatches = [...indexHtml.matchAll(/(?:href|src)=["'](?!https?:|mailto:|tel:|#)([^"']+)["']/g)];
+const indexPage = await readFile(resolveFromRoot('src/pages/index.astro'), 'utf8');
+if (!indexPage.includes('BaseLayout')) {
+  issues.push('The landing page must use BaseLayout.');
+}
 
-for (const [, assetPath] of assetMatches) {
-  const normalized = assetPath.replace(/^\.\//, '').split('?')[0];
-  const candidate = path.posix.join('src', normalized.replace(/\\/g, '/'));
-  if (!(await fileExists(candidate))) {
-    issues.push(`Broken local reference in src/index.html: ${assetPath}`);
-  }
+const invitePage = await readFile(resolveFromRoot('src/pages/friend/invite.astro'), 'utf8');
+if (!invitePage.includes('InviteLanding')) {
+  issues.push('The invite page must render InviteLanding.');
 }
 
 if (issues.length > 0) {

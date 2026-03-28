@@ -1,0 +1,25 @@
+---
+import DownloadButton from '@/components/common/DownloadButton.astro';
+---
+
+<section class="cta-section" aria-labelledby="cta-heading">
+  <div class="wrap">
+    <div class="cta-section__inner">
+      <span class="eyebrow rv cta-eyebrow">Disponible bientôt sur Android</span>
+      <h2 class="rv d1" id="cta-heading">
+        Tu veux enfin voir clairement où part ton argent&nbsp;?
+      </h2>
+      <p class="lead rv d2">
+        Bicount est en préparation avec une première version centrée sur le suivi
+        des dépenses et la discipline quotidienne.
+      </p>
+      <DownloadButton
+        className="rv d3"
+        label="Télécharger Bicount (bientôt sur Android)"
+        ariaLabel="Télécharger Bicount, bientôt sur Android"
+        variant="lime"
+        showIcon={true}
+      />
+    </div>
+  </div>
+</section>

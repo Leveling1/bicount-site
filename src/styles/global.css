@@ -1,0 +1,166 @@
+:root {
+  --night: #132318;
+  --lime: #bcd367;
+  --lime-hover: #aacb3d;
+  --ink: #16241d;
+  --moss: #516159;
+  --olive: #69773a;
+  --surface: #edf2ed;
+  --surface-s: #f4f8f3;
+  --border: #d9e4da;
+  --white: #f4f4f4;
+  --page-bg: #fff;
+  --page-bg-2: #f7faf7;
+  --font: 'Lexend', sans-serif;
+  --r-sm: 14px;
+  --r: 20px;
+  --r-lg: 28px;
+  --r-xl: 36px;
+  --pill: 100px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font);
+  background: var(--page-bg);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+ul { list-style: none; }
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+
+.rv {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .5s var(--ease), transform .5s var(--ease);
+}
+
+.rv.in { opacity: 1; transform: none; }
+.rv.d1 { transition-delay: .07s; }
+.rv.d2 { transition-delay: .14s; }
+.rv.d3 { transition-delay: .21s; }
+.rv.d4 { transition-delay: .28s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv { opacity: 1; transform: none; transition: none; }
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) { .wrap { padding: 0 40px; } }
+@media (min-width: 1080px) { .wrap { padding: 0 60px; } }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+
+h1 {
+  font-size: clamp(2.6rem, 7.5vw, 5.4rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+
+h2 {
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.03em;
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.lead {
+  font-size: clamp(.95rem, 2vw, 1.15rem);
+  font-weight: 300;
+  color: var(--moss);
+  line-height: 1.7;
+}
+
+.body {
+  font-size: .9rem;
+  font-weight: 300;
+  color: var(--moss);
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: var(--pill);
+  font-family: var(--font);
+  font-size: .92rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background .18s, transform .15s, box-shadow .18s;
+  white-space: nowrap;
+}
+
+.btn:active { transform: scale(.97); }
+.btn-dark { background: var(--night); color: var(--white); }
+.btn-dark:hover { background: #0e1c12; box-shadow: 0 6px 24px rgba(19, 35, 24, .22); }
+.btn-lime { background: var(--lime); color: var(--night); }
+.btn-lime:hover { background: var(--lime-hover); box-shadow: 0 6px 24px rgba(188, 211, 103, .35); }
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: #a0b8a2; background: var(--surface-s); }
+
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 200;
+  padding: 14px 0;
+  background: rgba(255, 255, 255, .85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(217, 228, 218, .5);
+  transition: border-color .3s;
+}
+
+.nav.scrolled { border-color: var(--border); }
+.nav__inner, .nav__logo, .nav__right { display: flex; align-items: center; }
+.nav__inner { justify-content: space-between; gap: 16px; }
+.nav__logo { gap: 9px; }
+.nav__right { gap: 10px; }
+.nav__right .btn { padding: 10px 20px; font-size: .84rem; }
+.nav__links { display: none; }
+
+@media (min-width: 768px) {
+  .nav__links { display: flex; align-items: center; gap: 28px; }
+  .nav__links a { font-size: .88rem; font-weight: 500; color: var(--moss); transition: color .15s; }
+  .nav__links a:hover { color: var(--ink); }
+}
+
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  background: var(--night);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text { font-size: 1.15rem; font-weight: 800; letter-spacing: -.03em; }

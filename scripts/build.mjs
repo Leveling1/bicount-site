@@ -1,13 +1,24 @@
-import { cp, mkdir, rm } from 'node:fs/promises';
+import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const srcDir = path.join(repoRoot, 'src');
-const distDir = path.join(repoRoot, 'dist');
+const npmBin = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 
-await rm(distDir, { recursive: true, force: true });
-await mkdir(distDir, { recursive: true });
-await cp(srcDir, distDir, { recursive: true });
+const run = (command, args) => new Promise((resolve, reject) => {
+  const child = spawn(command, args, {
+    cwd: repoRoot,
+    stdio: 'inherit',
+    shell: true
+  });
 
-console.log(`Build completed: ${distDir}`);
+  child.on('close', (code) => {
+    if (code === 0) {
+      resolve();
+      return;
+    }
+    reject(new Error(`Build failed with exit code ${code ?? 'unknown'}.`));
+  });
+});
+
+await run(npmBin, ['exec', 'astro', 'build']);

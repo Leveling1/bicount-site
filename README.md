@@ -1,27 +1,34 @@
 # bicount-site
 
-Landing page statique de Bicount pour `bicount.levelingcoder.com`.
+Landing Bicount reconstruite avec `Astro + React` pour `bicount.levelingcoder.com`.
 
 ## Stack
-- HTML semantique
-- CSS mobile-first decoupe en petits fichiers
-- JavaScript modulaire sans dependance
-- Build Node natif qui copie `src/` vers `dist/`
+- Astro statique
+- React pour les comportements client ciblés
+- TypeScript
+- CSS global découpé en petits fichiers
 
 ## Commandes
-- `npm run check` verifie les liens locaux et la limite de 200 lignes
-- `npm run build` genere `dist/`
+- `npm run dev`
+- `npm run check`
+- `npm run build`
+- `npm run preview`
 
 ## Structure
-- `src/` contient la landing et les assets deployes
-- `scripts/` contient les scripts de build et de verification
-- `.github/workflows/ci-cd.yml` gere la CI/CD
-- `AGENTS.md` documente les regles projet
+- `src/pages/` contient les routes Astro
+- `src/components/` contient les sections et composants communs
+- `src/components/react/` contient les interactions hydratées
+- `public/` contient les assets statiques, `/.well-known`, `robots.txt` et `sitemap.xml`
+- `scripts/` contient les scripts projet
 
-## Deploy
-Le workflow deploye automatiquement le contenu de `dist/` par FTP sur `main`.
+## Déploiement
+La GitHub Action :
+- installe les dépendances
+- vérifie le projet
+- build `dist/`
+- déploie `dist/` par FTP sur `main`
 
-Secrets attendus dans GitHub:
+Secrets attendus :
 - `FTP_HOST`
 - `FTP_USERNAME`
 - `FTP_PASSWORD`

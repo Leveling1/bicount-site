@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["REPLACE_WITH_APPLE_TEAM_ID.com.youngsolver.bicount"],
+        "components": [
+          {
+            "/": "/friend/invite",
+            "?": {
+              "code": "*"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

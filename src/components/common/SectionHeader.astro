@@ -1,0 +1,20 @@
+---
+interface Props {
+  eyebrow: string;
+  id?: string;
+  title: string;
+  lead?: string;
+  center?: boolean;
+  maxWidth?: string;
+}
+
+const { eyebrow, id, title, lead, center = false, maxWidth } = Astro.props;
+const sectionClass = center ? 'sec-header center rv' : 'sec-header rv';
+const style = maxWidth ? `max-width:${maxWidth};` : undefined;
+---
+
+<div class={sectionClass}>
+  {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+  <h2 id={id} style="margin-top:12px;" set:html={title} />
+  {lead && <p class="lead" style={`margin-top:14px;${style ?? ''}`} set:html={lead} />}
+</div>

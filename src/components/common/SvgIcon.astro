@@ -1,0 +1,67 @@
+---
+type IconName =
+  | 'alert'
+  | 'check'
+  | 'clock'
+  | 'coin'
+  | 'cross'
+  | 'download'
+  | 'ledger'
+  | 'list'
+  | 'logo'
+  | 'not'
+  | 'ok'
+  | 'trend'
+  | 'trend-rise';
+
+interface Props {
+  name: IconName;
+  size?: number;
+  stroke?: string;
+}
+
+const { name, size = 20, stroke = 'currentColor' } = Astro.props;
+---
+
+<svg width={size} height={size} viewBox="0 0 20 20" fill="none" aria-hidden="true">
+  {name === 'logo' && (
+    <>
+      <path d="M3 13 L9 4 L15 13" stroke={stroke} stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M6 9.5 L12 9.5" stroke={stroke} stroke-width="1.6" stroke-linecap="round" />
+    </>
+  )}
+  {name === 'download' && (
+    <>
+      <path d="M10 2v9" stroke={stroke} stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M5 7l5 5 5-5" stroke={stroke} stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M2 17h16" stroke={stroke} stroke-width="1.8" stroke-linecap="round" />
+    </>
+  )}
+  {name === 'clock' && (
+    <>
+      <circle cx="10" cy="10" r="7" stroke={stroke} stroke-width="1.5" />
+      <path d="M10 6.5v4l2.5 2.5" stroke={stroke} stroke-width="1.5" stroke-linecap="round" />
+    </>
+  )}
+  {name === 'ledger' && (
+    <>
+      <rect x="3" y="3" width="14" height="14" rx="3" stroke={stroke} stroke-width="1.4" />
+      <path d="M6 10h8M6 7.5h5M6 12.5h4" stroke={stroke} stroke-width="1.4" stroke-linecap="round" />
+    </>
+  )}
+  {name === 'trend' && <path d="M3 15 L7 10 L11 12 L15 6" stroke={stroke} stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />}
+  {name === 'cross' && <path d="M4 10h12M10 4v12" stroke={stroke} stroke-width="1.5" stroke-linecap="round" />}
+  {name === 'alert' && <path d="M4 15 L10 6 L16 15 H4Z" stroke={stroke} stroke-width="1.5" stroke-linejoin="round" />}
+  {name === 'coin' && (
+    <>
+      <circle cx="10" cy="10" r="8" stroke={stroke} stroke-width="1.5" />
+      <path d="M10 7 C8 7 7 8 7 9.5c0 2 3 2 3 4 0 1-1 1.5-2 1.5" stroke={stroke} stroke-width="1.5" stroke-linecap="round" />
+      <path d="M10 6v1M10 15v1" stroke={stroke} stroke-width="1.5" stroke-linecap="round" />
+    </>
+  )}
+  {name === 'list' && <path d="M3 5h14M3 10h9M3 15h6" stroke={stroke} stroke-width="1.5" stroke-linecap="round" />}
+  {name === 'trend-rise' && <path d="M3 16 L7 10 L11 12 L15 6 L18 8" stroke={stroke} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />}
+  {name === 'check' && <path d="M4 10l3 3 6-6" stroke={stroke} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />}
+  {name === 'not' && <path d="M4 4l12 12M16 4L4 16" stroke={stroke} stroke-width="1.8" stroke-linecap="round" />}
+  {name === 'ok' && <path d="M4 10l4 4 8-8" stroke={stroke} stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />}
+</svg>

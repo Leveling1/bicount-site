@@ -1,0 +1,41 @@
+---
+import SectionHeader from '@/components/common/SectionHeader.astro';
+import SvgIcon from '@/components/common/SvgIcon.astro';
+import { identityIs, identityNot } from '@/config/site';
+---
+
+<section class="sec sec-alt" aria-labelledby="identity-heading">
+  <div class="wrap">
+    <SectionHeader
+      id="identity-heading"
+      eyebrow="Positionnement clair"
+      title="Ce que Bicount est… et n'est pas"
+      lead="Tu continues à utiliser tes moyens de paiement habituels, mais tu lis enfin tout au même endroit, avec une interface construite pour ta réalité."
+      maxWidth="52ch"
+    />
+    <div class="identity-grid">
+      <div class="id-col id-col--not rv d1">
+        <div class="id-col__head">
+          <SvgIcon name="not" size={13} stroke="#516159" />
+          Bicount n'est pas
+        </div>
+        <ul class="id-items" aria-label="Ce que Bicount n'est pas">
+          {identityNot.map((item) => (
+            <li class="id-item"><span class="id-dot" aria-hidden="true"></span><span>{item}</span></li>
+          ))}
+        </ul>
+      </div>
+      <div class="id-col id-col--is rv d2">
+        <div class="id-col__head">
+          <SvgIcon name="ok" size={13} stroke="#BCD367" />
+          Bicount est
+        </div>
+        <ul class="id-items" aria-label="Ce que Bicount est">
+          {identityIs.map((item) => (
+            <li class="id-item"><span class="id-dot" aria-hidden="true"></span>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

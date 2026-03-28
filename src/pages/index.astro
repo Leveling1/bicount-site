@@ -1,0 +1,43 @@
+---
+import BentoSection from '@/components/sections/BentoSection.astro';
+import FinalCta from '@/components/sections/FinalCta.astro';
+import HeroSection from '@/components/sections/HeroSection.astro';
+import IdentitySection from '@/components/sections/IdentitySection.astro';
+import PrinciplesSection from '@/components/sections/PrinciplesSection.astro';
+import ProSection from '@/components/sections/ProSection.astro';
+import SiteFooter from '@/components/sections/SiteFooter.astro';
+import SiteNav from '@/components/sections/SiteNav.astro';
+import StatsBand from '@/components/sections/StatsBand.astro';
+import TimelineSection from '@/components/sections/TimelineSection.astro';
+import { problemCards, solutionCards } from '@/config/site';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <SiteNav />
+  <main>
+    <HeroSection />
+    <StatsBand />
+    <BentoSection
+      id="prob-heading"
+      eyebrow="La réalité du quotidien"
+      title="Tu travailles dur… mais tu ne vois pas vraiment où part ton argent"
+      lead="Beaucoup de personnes jonglent entre espèces, mobile money, parfois un compte bancaire, la famille, les avances et les petits business. Au quotidien, tout circule, mais il devient presque impossible de savoir ce qui reste vraiment, de séparer perso et activité, et de planifier les prochains jours sans stress."
+      cards={problemCards}
+    />
+    <BentoSection
+      id="solution-heading"
+      eyebrow="Ce que Bicount change"
+      title="Bicount t'aide d'abord à reprendre la main sur tes dépenses perso"
+      lead="Bicount commence par quelque chose de simple&nbsp;: signaler chaque dépense, la mettre dans la bonne catégorie, la relire régulièrement. Cette petite discipline quotidienne suffit pour passer de «&nbsp;je ne sais pas où part l'argent&nbsp;» à «&nbsp;je vois clairement ce qui se passe&nbsp;»."
+      cards={solutionCards}
+      alt={true}
+    />
+    <ProSection />
+    <IdentitySection />
+    <PrinciplesSection />
+    <TimelineSection />
+    <FinalCta />
+  </main>
+  <SiteFooter />
+</BaseLayout>
