@@ -5,7 +5,12 @@ import SiteNav from '@/components/sections/SiteNav.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Invitation Bicount" description="Ouvre cette invitation dans Bicount pour rejoindre un partage de dépenses, puis télécharge l'application si besoin.">
+<BaseLayout
+  title="Invitation Bicount | Rejoindre l'application"
+  description="Ouvre cette invitation dans Bicount pour rejoindre un partage de dépenses, puis télécharge l'application si besoin."
+  canonicalPath="/friend/invite"
+  robots="noindex, nofollow"
+>
   <SiteNav />
   <main>
     <InviteLanding client:load />

@@ -2,9 +2,25 @@ export const downloadUrl = import.meta.env.PUBLIC_DOWNLOAD_URL
   ?? 'https://drive.google.com/file/d/1ZIBSN5Nh1L2XmaNgIx99dCiBIfi1BbPZ/view?usp=sharing';
 
 export const siteMeta = {
-  title: 'Bicount — Ton cockpit pour savoir où part ton argent',
-  description: 'Application mobile simple et locale pour suivre tes dépenses en cash, mobile money et banque à Kinshasa, RDC.',
-  url: 'https://bicount.levelingcoder.com'
+  title: 'Bicount | Application de gestion de dépenses et budget personnel',
+  description: 'Bicount est une application mobile de gestion de dépenses et de budget personnel pour suivre cash, mobile money et banque au quotidien.',
+  url: 'https://bicount.levelingcoder.com',
+  image: 'https://bicount.levelingcoder.com/og-image.svg'
+};
+
+export const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Bicount',
+  alternateName: 'Bicount App',
+  url: siteMeta.url,
+  logo: `${siteMeta.url}/images/logo-icon.png`,
+  description: siteMeta.description,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Kinshasa',
+    addressCountry: 'CD'
+  }
 };
 
 export const navLinks = [

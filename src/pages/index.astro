@@ -9,11 +9,11 @@ import SiteFooter from '@/components/sections/SiteFooter.astro';
 import SiteNav from '@/components/sections/SiteNav.astro';
 import StatsBand from '@/components/sections/StatsBand.astro';
 import TimelineSection from '@/components/sections/TimelineSection.astro';
-import { problemCards, solutionCards } from '@/config/site';
+import { organizationSchema, problemCards, solutionCards } from '@/config/site';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
-<BaseLayout>
+<BaseLayout canonicalPath="/" schema={organizationSchema}>
   <SiteNav />
   <main>
     <HeroSection />

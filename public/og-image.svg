@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" rx="36" fill="#FFFFFF"/>
+  <rect x="54" y="54" width="1092" height="522" rx="32" fill="#F7FAF7"/>
+  <rect x="88" y="88" width="1024" height="454" rx="28" fill="#132318"/>
+  <circle cx="988" cy="180" r="130" fill="url(#glow)" opacity="0.18"/>
+  <circle cx="220" cy="432" r="180" fill="url(#glow)" opacity="0.1"/>
+  <rect x="148" y="144" width="88" height="88" rx="24" fill="#EDF2ED"/>
+  <image href="/images/logo-icon.png" x="148" y="144" width="88" height="88"/>
+  <text x="270" y="198" fill="#F4F4F4" font-family="Lexend, Arial, sans-serif" font-size="46" font-weight="800">Bicount</text>
+  <text x="148" y="300" fill="#F4F4F4" font-family="Lexend, Arial, sans-serif" font-size="76" font-weight="900">Application de gestion</text>
+  <text x="148" y="382" fill="#BCD367" font-family="Lexend, Arial, sans-serif" font-size="76" font-weight="900">de dépenses et budget</text>
+  <text x="148" y="452" fill="#D9E4DA" font-family="Lexend, Arial, sans-serif" font-size="28" font-weight="400">Suivi cash, mobile money et banque pour mieux piloter ton argent au quotidien.</text>
+  <rect x="148" y="486" width="286" height="22" rx="11" fill="#BCD367" opacity="0.2"/>
+  <rect x="450" y="486" width="232" height="22" rx="11" fill="#BCD367" opacity="0.12"/>
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0) rotate(90) scale(180)">
+      <stop stop-color="#BCD367"/>
+      <stop offset="1" stop-color="#BCD367" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
