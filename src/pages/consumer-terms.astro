@@ -1,0 +1,13 @@
+---
+import { consumerTermsContent } from '@/config/legal/consumerTerms';
+import LegalLayout from '@/layouts/LegalLayout.astro';
+---
+
+<LegalLayout
+  title={consumerTermsContent.title}
+  description={consumerTermsContent.description}
+  canonicalPath="/consumer-terms"
+  lead={consumerTermsContent.lead}
+  updatedAt={consumerTermsContent.updatedAt}
+  sections={consumerTermsContent.sections}
+/>

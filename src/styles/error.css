@@ -1,0 +1,59 @@
+.error-page {
+  min-height: calc(100vh - 180px);
+  padding: 144px 20px 80px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, var(--page-bg-2) 0%, var(--page-bg) 56%);
+}
+
+.error-shell {
+  width: min(100%, 760px);
+  padding: 38px 34px;
+  background: rgba(255, 255, 255, .92);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  box-shadow: 0 28px 70px rgba(19, 35, 24, .08);
+  text-align: center;
+}
+
+.error-code {
+  margin: 18px 0 10px;
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.05em;
+  color: var(--olive);
+}
+
+.error-shell h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 16px;
+}
+
+.error-copy {
+  max-width: 34ch;
+  margin: 0 auto;
+}
+
+.error-actions {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+@media (max-width: 720px) {
+  .error-page {
+    padding-top: 124px;
+  }
+
+  .error-shell {
+    padding: 30px 22px;
+  }
+
+  .error-actions > * {
+    width: 100%;
+    justify-content: center;
+  }
+}

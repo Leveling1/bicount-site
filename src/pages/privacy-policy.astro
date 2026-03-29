@@ -1,0 +1,13 @@
+---
+import { privacyPolicyContent } from '@/config/legal/privacyPolicy';
+import LegalLayout from '@/layouts/LegalLayout.astro';
+---
+
+<LegalLayout
+  title={privacyPolicyContent.title}
+  description={privacyPolicyContent.description}
+  canonicalPath="/privacy-policy"
+  lead={privacyPolicyContent.lead}
+  updatedAt={privacyPolicyContent.updatedAt}
+  sections={privacyPolicyContent.sections}
+/>

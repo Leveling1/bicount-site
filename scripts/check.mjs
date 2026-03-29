@@ -23,9 +23,18 @@ const requiredPaths = [
   'public/sitemap.xml',
   'src/components/react/ClientBehaviors.tsx',
   'src/components/react/InviteLanding.tsx',
+  'src/components/common/ErrorShell.astro',
+  'src/layouts/LegalLayout.astro',
   'src/layouts/BaseLayout.astro',
+  'src/pages/403.astro',
+  'src/pages/404.astro',
+  'src/pages/500.astro',
+  'src/pages/auth.astro',
+  'src/pages/consumer-terms.astro',
   'src/pages/friend/invite.astro',
-  'src/pages/index.astro'
+  'src/pages/index.astro',
+  'src/pages/privacy-policy.astro',
+  'src/pages/usage-policy.astro'
 ];
 const textExtensions = new Set([
   '.astro',

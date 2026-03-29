@@ -1,0 +1,39 @@
+---
+import DownloadButton from '@/components/common/DownloadButton.astro';
+import SiteFooter from '@/components/sections/SiteFooter.astro';
+import SiteNav from '@/components/sections/SiteNav.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+interface Props {
+  code: string;
+  title: string;
+  description: string;
+  canonicalPath: string;
+}
+
+const { code, title, description, canonicalPath } = Astro.props;
+---
+
+<BaseLayout
+  title={`${code} | ${title} | Bicount`}
+  description={description}
+  canonicalPath={canonicalPath}
+  robots="noindex, nofollow"
+>
+  <SiteNav />
+  <main class="error-page">
+    <section class="error-shell rv in">
+      <span class="eyebrow">Bicount · assistance</span>
+      <p class="error-code">{code}</p>
+      <h1>{title}</h1>
+      <p class="lead error-copy">{description}</p>
+      <div class="error-actions">
+        <a href="/" class="btn btn-outline" aria-label="Retourner à l'accueil Bicount">
+          Retour à l’accueil
+        </a>
+        <DownloadButton label="Télécharger Bicount" ariaLabel="Télécharger Bicount" />
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

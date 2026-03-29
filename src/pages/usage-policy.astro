@@ -1,0 +1,13 @@
+---
+import { usagePolicyContent } from '@/config/legal/usagePolicy';
+import LegalLayout from '@/layouts/LegalLayout.astro';
+---
+
+<LegalLayout
+  title={usagePolicyContent.title}
+  description={usagePolicyContent.description}
+  canonicalPath="/usage-policy"
+  lead={usagePolicyContent.lead}
+  updatedAt={usagePolicyContent.updatedAt}
+  sections={usagePolicyContent.sections}
+/>

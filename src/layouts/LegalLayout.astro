@@ -1,0 +1,55 @@
+---
+import SiteFooter from '@/components/sections/SiteFooter.astro';
+import SiteNav from '@/components/sections/SiteNav.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+interface Section {
+  title: string;
+  paragraphs: string[];
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  lead: string;
+  updatedAt: string;
+  sections: Section[];
+}
+
+const { title, description, canonicalPath, lead, updatedAt, sections } = Astro.props;
+---
+
+<BaseLayout title={`${title} | Bicount`} description={description} canonicalPath={canonicalPath}>
+  <SiteNav />
+  <main class="legal-page">
+    <section class="legal-hero">
+      <div class="wrap">
+        <div class="legal-hero__content rv in">
+          <span class="eyebrow">Documents juridiques</span>
+          <h1>{title}</h1>
+          <p class="lead legal-hero__lead">{lead}</p>
+          <p class="legal-updated">Dernière mise à jour : {updatedAt}</p>
+        </div>
+      </div>
+    </section>
+    <section class="legal-content">
+      <div class="wrap">
+        <article class="legal-article">
+          {sections.map((section) => (
+            <section class="legal-section">
+              <h2>{section.title}</h2>
+              {section.paragraphs.map((paragraph) => <p class="body">{paragraph}</p>)}
+            </section>
+          ))}
+          <div class="legal-actions">
+            <a href="/" class="btn btn-outline" aria-label="Retourner à l'accueil Bicount">
+              Retour à l’accueil
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

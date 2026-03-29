@@ -3,110 +3,106 @@
 ## Purpose
 
 This repository hosts the Bicount marketing site deployed on `bicount.levelingcoder.com`.
-The current version is a faithful rebuild of the validated `landing_bicount_v2.html` reference inside an `Astro + React` architecture.
+The site is built with `Astro + React` and must stay faithful to the approved Bicount visual direction.
 
-Read this file before changing the site.
+Read this file before making changes.
 
 ## Product Goal
 
-The site must present Bicount exactly in the tone, structure, and visual intent of the approved landing reference.
-Its job is simple:
+The site has four jobs:
 
-- explain Bicount clearly
-- preserve the approved wording
-- push visitors toward downloading the app
-- stay extremely solid on mobile
+- present Bicount clearly
+- preserve the approved visual style
+- support conversion toward app download
+- expose required public support, legal, and callback routes without hurting SEO
 
 ## Core Technical Decisions
 
-- Astro drives routing and static generation
-- React is used only for targeted client behavior
-- TypeScript is enabled across the new stack
-- output must remain static in `dist/`
-- deployment stays GitHub Actions + FTP
+- Astro handles routing and static generation
+- React is used only for targeted client-side behavior
+- TypeScript is enabled
+- deployable output must stay in `dist/`
+- deployment remains GitHub Actions + FTP
 
-## Routes That Must Keep Working
+## Public Routes
+
+The following routes are part of the public surface and must be treated carefully:
 
 - `/`
+- `/auth`
+- `/consumer-terms`
+- `/usage-policy`
+- `/privacy-policy`
 - `/friend/invite`
 - `/.well-known/assetlinks.json`
 - `/.well-known/apple-app-site-association`
 - `/robots.txt`
 - `/sitemap.xml`
 
-Do not break these routes during redesign or refactor work.
+Error routes also exist in source:
+
+- `/403`
+- `/404`
+- `/500`
+
+## Route Rules
+
+1. Do not change `/auth`, `/consumer-terms`, `/usage-policy`, or `/privacy-policy` without coordinating with the mobile app.
+2. `/auth` is reserved for auth provider return flows and must not be reused for marketing content.
+3. `/friend/invite` is a utility fallback page and should stay `noindex`.
+4. Error pages must stay `noindex`.
+5. Legal pages may remain public and indexable.
 
 ## Current Structure
 
-- `src/pages/index.astro`: landing entry
-- `src/pages/friend/invite.astro`: invite fallback page
+- `src/pages/`: public Astro routes
 - `src/layouts/BaseLayout.astro`: shared document shell
+- `src/layouts/LegalLayout.astro`: long-form legal page shell
 - `src/components/sections/`: landing sections
-- `src/components/common/`: shared UI pieces
-- `src/components/react/`: hydrated client components
-- `src/config/site.ts`: central content and site constants
+- `src/components/common/ErrorShell.astro`: shared error page shell
+- `src/components/react/`: hydrated client behavior
+- `src/config/site.ts`: global site metadata and SEO constants
+- `src/config/legal/`: legal page content
 - `src/styles/`: global CSS split by concern
 - `public/.well-known/`: mobile association files
-- `public/images/logo-icon.png`: copied Bicount icon asset
+- `public/images/logo-icon.png`: copied Bicount logo asset
 
-## Fidelity Rules
+## Design Rules
 
-1. Treat `C:\Users\louis\Downloads\landing_bicount_v2.html` as the visual and textual source of truth for the landing.
-2. Preserve the approved French copy unless the user explicitly asks for changes.
-3. Preserve the same hierarchy, spacing logic, and overall rendering as closely as possible.
-4. For pages not shown in the reference file, reuse the same visual language instead of inventing a second design system.
+1. Keep the light Paddle-like Bicount aesthetic already established on the landing.
+2. New pages must feel like part of the same product family.
+3. Reuse existing spacing rhythm, typography, borders, surfaces, and tone.
+4. Do not introduce a second design system for legal, auth, or error pages.
+5. Keep everything mobile first.
 
-## Mobile-First Rules
+## Content And Fidelity Rules
 
-1. Start from narrow screens first.
-2. Keep initial load fast and avoid unnecessary hydration.
-3. Prefer CSS transforms and opacity for motion.
-4. Respect `prefers-reduced-motion`.
-5. Do not add heavy client libraries unless the user asks for them.
+1. Preserve the approved landing copy unless the user explicitly asks for changes.
+2. For non-landing pages, keep the same brand voice: clear, calm, product-led, premium.
+3. Legal pages must include a page title, readable article width, and a visible last-updated date.
+4. Error pages must help the user recover with a path back to the landing.
 
-## Visual Rules
+## SEO Rules
 
-- Keep the light Paddle-like composition from the approved reference.
-- Preserve Bicount’s green/night palette tokens already embedded in the styles.
-- Keep typography on `Lexend`.
-- Avoid generic SaaS redesigns that drift from the approved reference.
-
-## Download Rules
-
-- Use the current download URL defined in `src/config/site.ts`.
-- Download CTAs are expected to open the external file in a new tab.
-- If the download URL changes, update it in one place only.
-
-## Invite And Deep Link Rules
-
-- `/friend/invite` is a fallback web page for invite links
-- it must read the `code` query string
-- it must keep a visible download CTA
-- it must keep a copy-to-clipboard action
-- it must stay visually aligned with the landing
-
-## `.well-known` Rules
-
-These files are intentionally public and must stay deployable as static files:
-
-- `public/.well-known/assetlinks.json`
-- `public/.well-known/apple-app-site-association`
-
-Do not move them into client bundles or dynamic routes.
+1. Keep canonical URLs, robots directives, Open Graph tags, and shared metadata working.
+2. Do not add utility pages to the sitemap.
+3. Keep public legal pages in the sitemap unless the user asks otherwise.
+4. Avoid duplicate content or duplicate route variants when adding pages.
+5. Keep error pages and callback-style pages out of the index.
 
 ## Asset Rules
 
-- if you need Bicount branding assets, copy them from the app repository
-- never move or delete the original app assets
-- prefer reusing the copied logo already present in this repo
+- If you need Bicount branding assets, copy them from the app repository.
+- Never move or delete the original app assets.
+- Prefer reusing the copied assets already present in this repo.
 
 ## Editing Constraints
 
 1. Keep text-based source files at or below 200 lines when practical for this project convention.
-2. Keep comments short and only where they remove real ambiguity.
-3. Prefer extending `src/config/site.ts` over duplicating content in multiple files.
+2. Keep comments short and useful.
+3. Prefer shared layouts and config files over copy-pasted page structures.
 4. Preserve semantic HTML and accessible labels.
-5. Do not reintroduce the legacy static-site architecture unless explicitly requested.
+5. Do not reintroduce the old static-site architecture unless explicitly requested.
 
 ## Validation
 
@@ -115,33 +111,17 @@ Before shipping changes, run:
 - `npm run check`
 - `npm run build`
 
-The build must regenerate `dist/`.
-
-## CI/CD
-
-The workflow in `.github/workflows/ci-cd.yml` must:
-
-- install dependencies
-- run project checks
-- build the site
-- deploy `dist/` by FTP on push to `main`
-
-Expected GitHub secrets:
-
-- `FTP_HOST`
-- `FTP_USERNAME`
-- `FTP_PASSWORD`
-- `FTP_PORT`
-- `FTP_TARGET`
+Both must pass and `dist/` must regenerate correctly.
 
 ## Sensitive Areas
 
-Be careful when changing:
+Be careful when editing:
 
 - `src/config/site.ts`
+- `src/config/legal/*`
 - `src/layouts/BaseLayout.astro`
-- `src/components/react/ClientBehaviors.tsx`
-- `src/components/react/InviteLanding.tsx`
+- `src/layouts/LegalLayout.astro`
+- `src/components/react/*`
 - `public/.well-known/*`
 - `.github/workflows/ci-cd.yml`
 
@@ -149,8 +129,13 @@ Be careful when changing:
 
 1. `AGENTS.md`
 2. `src/config/site.ts`
-3. `src/pages/index.astro`
-4. `src/components/sections/`
-5. `src/pages/friend/invite.astro`
-6. `src/components/react/InviteLanding.tsx`
-7. `public/.well-known/*`
+3. `src/config/legal/*`
+4. `src/layouts/BaseLayout.astro`
+5. `src/layouts/LegalLayout.astro`
+6. `src/pages/index.astro`
+7. `src/pages/auth.astro`
+8. `src/pages/friend/invite.astro`
+9. `src/pages/consumer-terms.astro`
+10. `src/pages/usage-policy.astro`
+11. `src/pages/privacy-policy.astro`
+12. `src/components/common/ErrorShell.astro`

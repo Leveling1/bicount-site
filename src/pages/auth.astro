@@ -1,0 +1,31 @@
+---
+import SiteFooter from '@/components/sections/SiteFooter.astro';
+import SiteNav from '@/components/sections/SiteNav.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Retour d'authentification | Bicount"
+  description="Page réservée aux retours d'authentification Bicount."
+  canonicalPath="/auth"
+  robots="noindex, nofollow"
+>
+  <SiteNav />
+  <main class="error-page">
+    <section class="error-shell rv in">
+      <span class="eyebrow">Bicount · callback</span>
+      <p class="error-code">AUTH</p>
+      <h1>Retour d’authentification réservé</h1>
+      <p class="lead error-copy">
+        Cette page est réservée aux retours d’authentification du produit. Si
+        rien ne se passe automatiquement, rouvre l’application Bicount.
+      </p>
+      <div class="error-actions">
+        <a href="/" class="btn btn-outline" aria-label="Retourner à l'accueil Bicount">
+          Retour à l’accueil
+        </a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>
