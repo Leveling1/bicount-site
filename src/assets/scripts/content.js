@@ -1,4 +1,4 @@
-export const downloadUrl = 'https://drive.google.com/file/d/1CKR4NAlWvSf-_zJDPzifE8-_hNl6u8An/view?usp=sharing';
+export const downloadUrl = 'https://drive.google.com/file/d/1Y1YnrsJ8u3aGgqASDvOO1dS7OtTGFCiB/view?usp=sharing';
 
 export const navigation = [
   { href: '#features', label: 'Fonctionnalités' },

@@ -1,5 +1,5 @@
 export const downloadUrl = import.meta.env.PUBLIC_DOWNLOAD_URL
-  ?? 'https://drive.google.com/file/d/1CKR4NAlWvSf-_zJDPzifE8-_hNl6u8An/view?usp=sharing';
+  ?? 'https://drive.google.com/file/d/1Y1YnrsJ8u3aGgqASDvOO1dS7OtTGFCiB/view?usp=sharing';
 
 export const siteMeta = {
   title: 'Bicount | Application de gestion de dépenses et budget personnel',
