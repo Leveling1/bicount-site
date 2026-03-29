@@ -65,7 +65,7 @@ Error routes also exist in source:
 - `src/config/legal/`: legal page content
 - `src/styles/`: global CSS split by concern
 - `public/.well-known/`: mobile association files
-- `public/images/logo-icon.png`: copied Bicount logo asset
+- `public/images/bicount-icon.png`: copied Bicount logo asset
 
 ## Design Rules
 

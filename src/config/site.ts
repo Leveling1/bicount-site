@@ -14,7 +14,7 @@ export const organizationSchema = {
   name: 'Bicount',
   alternateName: 'Bicount App',
   url: siteMeta.url,
-  logo: `${siteMeta.url}/images/logo-icon.png`,
+  logo: `${siteMeta.url}/images/bicount-icon.png`,
   description: siteMeta.description,
   address: {
     '@type': 'PostalAddress',

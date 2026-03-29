@@ -17,7 +17,7 @@ const requiredPaths = [
   '.github/workflows/ci-cd.yml',
   'public/.well-known/apple-app-site-association',
   'public/.well-known/assetlinks.json',
-  'public/images/logo-icon.png',
+  'public/images/bicount-icon.png',
   'public/og-image.svg',
   'public/robots.txt',
   'public/sitemap.xml',
