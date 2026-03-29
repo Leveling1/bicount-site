@@ -3,7 +3,16 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const scanRoots = ['src', 'public', 'scripts', '.github/workflows'];
+const scanRoots = [
+  'src/components',
+  'src/config',
+  'src/layouts',
+  'src/pages',
+  'src/styles',
+  'public',
+  'scripts',
+  '.github/workflows'
+];
 const rootFiles = [
   '.gitignore',
   'AGENTS.md',
