@@ -58,7 +58,11 @@ const schemaList = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={siteMeta.image} />
-    <link rel="icon" href="/images/bicount-icon.png" />
+    <meta name="application-name" content="Bicount" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

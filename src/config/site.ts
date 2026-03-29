@@ -5,7 +5,8 @@ export const siteMeta = {
   title: 'Bicount | Application de gestion de dépenses et budget personnel',
   description: 'Bicount est une application mobile de gestion de dépenses et de budget personnel pour suivre cash, mobile money et banque au quotidien.',
   url: 'https://bicount.levelingcoder.com',
-  image: 'https://bicount.levelingcoder.com/og-image.svg'
+  image: 'https://bicount.levelingcoder.com/og-image.svg',
+  icon: 'https://bicount.levelingcoder.com/favicon.png'
 };
 
 export const organizationSchema = {
@@ -14,7 +15,7 @@ export const organizationSchema = {
   name: 'Bicount',
   alternateName: 'Bicount App',
   url: siteMeta.url,
-  logo: `${siteMeta.url}/images/bicount-icon.png`,
+  logo: siteMeta.icon,
   description: siteMeta.description,
   address: {
     '@type': 'PostalAddress',
