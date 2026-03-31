@@ -24,6 +24,7 @@ const rootFiles = [
 const requiredPaths = [
   ...rootFiles,
   '.github/workflows/ci-cd.yml',
+  'public/.well-known/.htaccess',
   'public/apple-touch-icon.png',
   'public/favicon.png',
   'public/.well-known/apple-app-site-association',
