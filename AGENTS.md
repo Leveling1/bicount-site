@@ -139,3 +139,18 @@ Be careful when editing:
 10. `src/pages/usage-policy.astro`
 11. `src/pages/privacy-policy.astro`
 12. `src/components/common/ErrorShell.astro`
+
+## Invite Deep Link Update (2026-04-02)
+
+Rules:
+- `/friend/invite` remains the HTTPS fallback page, but on mobile it may also try the custom scheme `bicount://friend/invite?code=...`
+- keep the invite fallback page usable even if the app is not installed or the scheme open fails
+- do not remove the visible download CTA or code-copy fallback from the invite page
+- keep the GitHub artifact upload configured with `include-hidden-files: true` so `.well-known` survives deployment
+
+## TypeScript Config Update (2026-04-02)
+
+Rules:
+- keep the website `tsconfig.json` aligned with Astro expectations by including `.astro/types.d.ts` and excluding `dist`
+- prefer `paths` without deprecated `baseUrl`; for aliases like `@/*`, keep the target relative such as `./src/*`
+- if editor-only TypeScript errors appear while `tsc` passes, check `tsconfig.json` before changing application code
