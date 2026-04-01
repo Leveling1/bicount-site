@@ -32,6 +32,7 @@ jobs:
         with:
           name: bicount-site-dist
           path: dist
+          include-hidden-files: true
 
   deploy:
     if: github.event_name == 'push'
