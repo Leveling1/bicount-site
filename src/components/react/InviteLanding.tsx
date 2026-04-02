@@ -11,11 +11,13 @@ const getCode = () => {
   }
 
   const params = new URLSearchParams(window.location.search);
-  return params.get('code')?.trim() || fallbackCode;
+  return (
+    params.get('inviteCode')?.trim() || params.get('code')?.trim() || fallbackCode
+  );
 };
 
 const buildInviteDeepLink = (code: string) =>
-  `${appScheme}://friend/invite?code=${encodeURIComponent(code)}`;
+  `${appScheme}://friend/invite?inviteCode=${encodeURIComponent(code)}`;
 
 export default function InviteLanding() {
   const [copied, setCopied] = useState(false);

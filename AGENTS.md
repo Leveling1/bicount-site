@@ -143,7 +143,7 @@ Be careful when editing:
 ## Invite Deep Link Update (2026-04-02)
 
 Rules:
-- `/friend/invite` remains the HTTPS fallback page, but on mobile it may also try the custom scheme `bicount://friend/invite?code=...`
+- `/friend/invite` remains the HTTPS fallback page, but on mobile it may also try the custom scheme `bicount://friend/invite?inviteCode=...`
 - keep the invite fallback page usable even if the app is not installed or the scheme open fails
 - do not remove the visible download CTA or code-copy fallback from the invite page
 - keep the GitHub artifact upload configured with `include-hidden-files: true` so `.well-known` survives deployment
