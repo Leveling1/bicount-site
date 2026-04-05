@@ -1,5 +1,5 @@
 export const downloadUrl = import.meta.env.PUBLIC_DOWNLOAD_URL
-  ?? 'https://drive.google.com/file/d/1Y1YnrsJ8u3aGgqASDvOO1dS7OtTGFCiB/view?usp=sharing';
+  ?? 'https://drive.google.com/file/d/1rtjCjkhmAkX08v9ciMUfDrVRbDHWuIcD/view?usp=sharing?usp=sharing';
 export const appScheme = 'bicount';
 
 export const siteMeta = {
